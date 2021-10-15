@@ -2,7 +2,7 @@ import React from 'react';
 
 const FeaturedPosts = ({ blok }) => {
   return (
-    <div className="py-8 mb-6 container mx-auto text-left" key={blok._uid}>
+    <div className="py-8 mb-6 container mx-auto text-left">
       <div className="relative">
         <h2 className="relative font-serif text-4xl z-10 text-primary">
           {blok.title}
@@ -13,6 +13,7 @@ const FeaturedPosts = ({ blok }) => {
         {blok.posts.map((post) => {
           const lang = post.lang === 'default' ? '/en' : `/${post.lang}`;
 
+          console.log('post.slug', post.slug);
           return (
             <li key={post.slug} className="pr-8 w-1/3">
               <a

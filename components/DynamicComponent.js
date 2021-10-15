@@ -27,12 +27,12 @@ const DynamicComponent = ({ blok, isEditable = true }) => {
     if (isEditable) {
       return (
         <SbEditable content={blok} key={blok._uid}>
-          <Component blok={blok} />;
+          <Component blok={blok} />
         </SbEditable>
       );
     }
 
-    return <Component blok={blok} key={blok._uid} />;
+    return <Component blok={blok} key={`c${blok._uid}`} />;
   }
   return <Placeholder componentName={blok.component} />;
 };

@@ -3,7 +3,7 @@ import { render } from 'storyblok-rich-text-react-renderer';
 import DynamicComponent from './DynamicComponent';
 
 const BlogPost = ({ blok }) => {
-  const textWithBlocks = blok.long_text.content.reduce((parts, part, i) => {
+  const textWithComponents = blok.long_text.content.reduce((parts, part, i) => {
     if (part.type === 'blok') {
       parts.push(part);
     } else if (parts[parts.length - 1]?.type === 'doc') {
@@ -26,7 +26,7 @@ const BlogPost = ({ blok }) => {
           <img className="w-full bg-gray-300 my-16" src={blok.image} />
         </div>
       </div>
-      {textWithBlocks.map((b, i) => {
+      {textWithComponents.map((b, i) => {
         if (b.type === 'doc') {
           return (
             <div
@@ -40,10 +40,7 @@ const BlogPost = ({ blok }) => {
           );
         } else {
           return (
-            <DynamicComponent
-              key={`${blok._uid}-text_blok${i}`}
-              blok={b.attrs.body[0]}
-            />
+            <DynamicComponent key={`c${blok._uid}`} blok={b.attrs.body[0]} />
           );
         }
       })}
