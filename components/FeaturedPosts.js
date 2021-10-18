@@ -12,8 +12,6 @@ const FeaturedPosts = ({ blok }) => {
       <ul className="flex">
         {blok.posts.map((post) => {
           const lang = post.lang === 'default' ? '/en' : `/${post.lang}`;
-
-          console.log('post.slug', post.slug);
           return (
             <li key={post.slug} className="pr-8 w-1/3">
               <a

@@ -1,9 +1,11 @@
 const Navigation = ({ locale, locales }) => {
   const resolveHome = {
+    de: 'Heim',
     en: 'Home',
     es: 'Página principal',
   };
   const resolveAbout = {
+    de: 'Über',
     en: 'About',
     es: 'Acerca',
   };
