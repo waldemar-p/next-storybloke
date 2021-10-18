@@ -1,5 +1,5 @@
 const Headline = ({ blok }) => {
-  if (!blok) return null;
+  if (!blok || !blok?.tag) return null;
 
   const CustomTag = `${blok.tag}`;
 
